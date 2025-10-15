@@ -1,0 +1,13 @@
+Body{
+    text-align: center;
+}
+
+#clue{
+    font-family: monospace;
+    font-size: 24px;
+    padding: 1em;
+}
+
+#newgameera{
+    margin-top: 2em;
+}
