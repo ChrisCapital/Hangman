@@ -49,7 +49,12 @@ function guessLetter(){
         if (allFound){
             document.getElementById("guesses").textContent = "Congratulations! You've won!";
             gameOver = true;
+            return;
         }
+        if (guess_count <= 0){
+            document.getElementById("guesses").textContent = "Game over! The word was: " + word;
+            gameOver = true;
+            return;
     }
 }
 
