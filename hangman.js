@@ -37,7 +37,20 @@ function guessLetter(){
         document.getElementById("guesses").textContent = "The game is over. Please start a new game.";
         return;
     }
-
+    if (guessess.includes(letter)){
+        document.getElementById("guesses").textContent = "You have already guessed that letter.";
+        return;
+    }
+    let allFound = true;
+    for (let i = 0; i < word.length; i++){
+        if (!guesses.includes(word[i])){
+            allFound = false;
+        }
+        if (allFound){
+            document.getElementById("guesses").textContent = "Congratulations! You've won!";
+            gameOver = true;
+        }
+    }
 }
 
 
