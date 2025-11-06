@@ -19,10 +19,27 @@ function newGame(){
 function guessLetter(){
     var input = document.getElementById("guess");
     var letter = input.value.toLowerCase();
+    
+    if (!word) {
+        document.getElementById("guesses").textContent = "Start a new game first.";
+        input.value = "";
+        return;
+    }
+    if (gameOver) { 
+        document.getElementById("guesses").textContent = "Game over. Press New Game."; 
+        input.value = "";
+        return; 
+    }
+    if (guesses.includes(letter)) { 
+        document.getElementById("guesses").textContent = "You already guessed '" + letter + "'."; 
+        input.value = "";
+        return; 
+    }
     if(word.indexOf(letter)<0){
         console.log("Wrong guess!");
         guess_count--;
     }   
+    
     console.log(`Current guesscount: ${guess_count}`);
     guesses += letter;
     updatePage();
