@@ -12,8 +12,8 @@ function newGame(){
     guesses = "";
     guess_count = MAX_GUESSES;
     gameOver = false;
+    document.getElementById("guessArea").style.display = "block";
     updatePage();
-
 }
 
 function guessLetter(){
@@ -48,6 +48,7 @@ function guessLetter(){
     
     if (guess_count <= 0) { 
         document.getElementById("guesses").textContent = "You lost! Word was '" + word + "'.";
+        document.getElementById("guessArea").style.display = "none";
         gameOver = true;
         return;
     }
@@ -62,6 +63,7 @@ function guessLetter(){
 
     if (allFound) { 
         document.getElementById("guesses").textContent = "You win!"; 
+        document.getElementById("guessArea").style.display = "none";
         gameOver = true;
         return;
     }
